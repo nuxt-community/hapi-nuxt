@@ -1,0 +1,12 @@
+{
+  "name": "hapi-nuxt",
+  "version": "0.1.0",
+  "description": "Nuxt middleware for hapi.js",
+  "repository": "https://github.com/fandogh/hapi-nuxt",
+  "contributors": [
+    "Pooya Parsa <pooya@pi0.ir>"
+  ],
+  "dependencies": {
+    "nuxt": "^0.9.7"
+  }
+}
