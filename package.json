@@ -8,6 +8,8 @@
     "Pooya Parsa <pooya@pi0.ir>"
   ],
   "dependencies": {
+    "h2o2": "^5.4.0",
+    "inert": "^4.1.0",
     "lodash": "^4.17.4",
     "nuxt": "^0.9.7"
   }
