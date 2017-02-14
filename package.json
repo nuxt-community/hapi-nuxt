@@ -1,6 +1,6 @@
 {
   "name": "hapi-nuxt",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Nuxt middleware for hapi.js",
   "repository": "https://github.com/fandogh/hapi-nuxt",
   "main": "lib/index.js",
@@ -11,6 +11,6 @@
     "h2o2": "^5.4.0",
     "inert": "^4.1.0",
     "lodash": "^4.17.4",
-    "nuxt": "^0.9.8"
+    "nuxt": "^0.9.9"
   }
 }
