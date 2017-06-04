@@ -1,15 +1,13 @@
 {
   "name": "hapi-nuxt",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Nuxt middleware for hapi.js",
   "repository": "https://github.com/fandogh/hapi-nuxt",
-  "main": "lib/index.js",
+  "main": "index.js",
   "contributors": [
     "Pooya Parsa <pooya@pi0.ir>"
   ],
   "dependencies": {
-    "h2o2": "^5.4.0",
-    "inert": "^4.1.0",
-    "lodash": "^4.17.4"
+    "nuxt": "^1.0.0-alpha.3"
   }
 }
