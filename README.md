@@ -1,5 +1,7 @@
 # hapi-nuxt
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nuxt-community/hapi-nuxt.svg)](https://greenkeeper.io/)
+
 > [Nuxt.js](https://nuxtjs.org) plugin for [Hapi.js](https://hapijs.com/)
 
 [![npm](https://img.shields.io/npm/dt/hapi-nuxt.svg?style=flat-square)](https://npmjs.com/package/hapi-nuxt)
