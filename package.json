@@ -1,8 +1,8 @@
 {
   "name": "hapi-nuxt",
   "version": "0.6.0",
-  "description": "Nuxt middleware for hapi.js",
-  "repository": "https://github.com/fandogh/hapi-nuxt",
+  "description": "Nuxt plugin for Hapi.js",
+  "repository": "https://github.com/nuxt-community/hapi-nuxt",
   "main": "src/index.js",
   "scripts": {
     "test": "jest"
