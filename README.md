@@ -1,13 +1,13 @@
 # hapi-nuxt
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/nuxt-community/hapi-nuxt.svg)](https://greenkeeper.io/)
-
-> [Nuxt.js](https://nuxtjs.org) plugin for [Hapi.js](https://hapijs.com/)
-
 [![npm](https://img.shields.io/npm/dt/hapi-nuxt.svg?style=flat-square)](https://npmjs.com/package/hapi-nuxt)
 [![npm release](https://img.shields.io/npm/v/hapi-nuxt/latest.svg?style=flat-square)](https://npmjs.com/package/hapi-nuxt)
 [![CircleCI](https://img.shields.io/circleci/project/github/nuxt-community/hapi-nuxt.svg?style=flat-square)](https://circleci.com/gh/nuxt-community/hapi-nuxt)
 [![Codecov](https://img.shields.io/codecov/c/github/nuxt-community/hapi-nuxt.svg?style=flat-square)](https://codecov.io/gh/nuxt-community/hapi-nuxt)
+[![Greenkeeper badge](https://img.shields.io/badge/greenkeepr-enabled-green.svg?style=flat-square)](https://greenkeeper.io/)
+[![dependencies Status](https://david-dm.org/expressjs/express/status.svg?style=flat-square)](https://david-dm.org/expressjs/express)
+
+> [Nuxt.js](https://nuxtjs.org) plugin for [Hapi.js](https://hapijs.com/)
 
 ## Quick start
 
