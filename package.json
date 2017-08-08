@@ -3,11 +3,23 @@
   "version": "0.5.0",
   "description": "Nuxt middleware for hapi.js",
   "repository": "https://github.com/fandogh/hapi-nuxt",
-  "main": "index.js",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": { 
+    "testEnvironment": "node" 
+  },
   "contributors": [
     "Pooya Parsa <pooya@pi0.ir>"
   ],
   "dependencies": {
-    "nuxt": "^1.0.0-alpha.3"
+    "hapi": "^16.5.2",
+    "nuxt": "^1.0.0-rc3"
+  },
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "jest": "^20.0.4",
+    "request-promise-native": "^1.0.4"
   }
 }
