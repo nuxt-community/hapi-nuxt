@@ -5,6 +5,7 @@ const NuxtPlugin = {
     register(server, config, next) {
 
         // If config is not provided try nuxt.config.js
+        /* istanbul ignore if  */
         if (!config || Object.keys(config).length === 0) {
             config = 'nuxt.config.js'
         }
@@ -54,6 +55,7 @@ const NuxtPlugin = {
                 next()
             })
             .catch((err) => {
+                /* istanbul ignore next  */
                 console.error(err)
             })
         } else {
