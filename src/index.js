@@ -35,7 +35,7 @@ const NuxtPlugin = {
             handler (request, reply) {
                 const {req, res} = request.raw
 
-                // Inject hapi standard request and reply
+                // Inject Hapi standard request and reply
                 req.request = request
                 res.reply = reply
 
@@ -45,7 +45,7 @@ const NuxtPlugin = {
         })
 
         // Dev
-        if (nuxt.options.dev) {
+        if (nuxt.options.dev && nuxt.options.startOnly !== false) {
             // Build nuxt
             const builder = new Builder(nuxt)
             server.expose('builder', builder)
