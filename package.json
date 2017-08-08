@@ -1,14 +1,14 @@
 {
   "name": "hapi-nuxt",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Nuxt middleware for hapi.js",
   "repository": "https://github.com/fandogh/hapi-nuxt",
   "main": "src/index.js",
   "scripts": {
     "test": "jest"
   },
-  "jest": { 
-    "testEnvironment": "node" 
+  "jest": {
+    "testEnvironment": "node"
   },
   "contributors": [
     "Pooya Parsa <pooya@pi0.ir>"
