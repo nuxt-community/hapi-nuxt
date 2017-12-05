@@ -1,6 +1,6 @@
 {
   "name": "hapi-nuxt",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "Nuxt plugin for Hapi.js",
   "repository": "https://github.com/nuxt-community/hapi-nuxt",
   "main": "src/index.js",
@@ -17,8 +17,8 @@
     "Pooya Parsa <pooya@pi0.ir>"
   ],
   "dependencies": {
-    "hapi": "^16.5.2",
-    "nuxt": "^1.0.0-rc3"
+    "hapi": "^17.1.1",
+    "nuxt": "^1.0.0-rc11"
   },
   "devDependencies": {
     "axios": "^0.16.2",

@@ -5,9 +5,7 @@ const hapiNuxt = require('..')
 describe('options', () => {
 
     test('nuxt.config.js', () => {
-        server = new Server()
-
-        server.connection({ port: 1234 })
+        server = new Server({ port: 1234 })
 
         server.register({
             register: hapiNuxt,

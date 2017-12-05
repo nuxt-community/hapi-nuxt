@@ -14,14 +14,13 @@ describe('start', () => {
     beforeAll(async () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
 
-        server = new Server()
-        server.connection({ port })
+        server = new Server({ port })
 
         server.route({
             path: '/api',
             method: 'GET',
-            handler(request, reply) {
-                reply({ api: 'works!' })
+            handler(request, h) {
+                return { api: 'works!' }
             }
         })
 
@@ -33,7 +32,10 @@ describe('start', () => {
         console.log('Built!')
 
         // Register plugin
-        await server.register({ register: hapiNuxt, options })
+        await server.register({
+          plugin: hapiNuxt,
+          options
+        })
 
         // Start server
         await server.start()

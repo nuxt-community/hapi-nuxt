@@ -2,20 +2,24 @@ const { resolve } = require('path')
 const { Nuxt, Builder } = require('nuxt')
 
 const NuxtPlugin = {
-    register(server, config, next) {
+
+    name: 'nuxt',
+
+    pkg: require('../package.json'),
+
+    register: (server, config) => {
 
         // If config is not provided try nuxt.config.js
-        /* istanbul ignore if  */
         if (!config || Object.keys(config).length === 0) {
-            config = 'nuxt.config.js'
+            config = 'nuxt.config.js';
         }
 
         // Resolve config location if is provided as string
         if(typeof config === 'string') {
             try {
-                const path = resolve(process.cwd(), config)
-                console.log(path)
-                config = require(path)
+                const path = resolve(process.cwd(), config);
+                // console.log(path)
+                config = require(path);
             } catch (e) {
                 // DO NOTHING
             }
@@ -35,40 +39,32 @@ const NuxtPlugin = {
             },
             handler (request, reply) {
                 const {req, res} = request.raw
-
-                // Inject Hapi standard request and reply
+                //
+                // // Inject Hapi standard request and reply
                 req.request = request
                 res.reply = reply
+                //
+                // // Render using nuxt.render
 
-                // Render using nuxt.render
-                nuxt.render(req, res)
+                return new Promise((resolve, reject) => {
+                    nuxt.render(req, res, promise => {
+                        promise.then(resolve).catch(reject);
+                    })
+                })
+
             }
         })
 
         // Dev
         if (nuxt.options.dev && nuxt.options.startOnly !== false) {
             // Build nuxt
-            const builder = new Builder(nuxt)
-            server.expose('builder', builder)
-            builder.build()
-            .then(() => {
-                next()
-            })
-            .catch((err) => {
-                /* istanbul ignore next  */
-                console.error(err)
-            })
-        } else {
-            // Production
-            next()
+            (async () =>{
+                const builder = new Builder(nuxt);
+                server.expose('builder', builder);
+                await  builder.build();
+            })()
         }
     }
 }
 
-NuxtPlugin.register.attributes = {
-    name: 'nuxt',
-    pkg: require('../package.json')
-}
-
-module.exports = NuxtPlugin
-
+module.exports = NuxtPlugin;
