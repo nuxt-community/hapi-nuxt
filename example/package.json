@@ -3,8 +3,8 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "dev": "nodemon",
-        "start": "NODE_ENV=production node ./server",
+        "dev": "nodemon server.js",
+        "start": "NODE_ENV=production node server.js",
         "build": "nuxt build"
     }
 }
