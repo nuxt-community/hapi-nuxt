@@ -7,19 +7,18 @@ const NuxtPlugin = {
 
     pkg: require('../package.json'),
 
-    register: (server, config) => {
+    async register (server, config) {
 
         // If config is not provided try nuxt.config.js
         if (!config || Object.keys(config).length === 0) {
-            config = 'nuxt.config.js';
+            config = 'nuxt.config.js'
         }
 
         // Resolve config location if is provided as string
         if(typeof config === 'string') {
             try {
-                const path = resolve(process.cwd(), config);
-                // console.log(path)
-                config = require(path);
+                const path = resolve(process.cwd(), config)
+                config = require(path)
             } catch (e) {
                 // DO NOTHING
             }
@@ -37,34 +36,25 @@ const NuxtPlugin = {
                 id: 'NuxtController.render',
                 auth: false,
             },
-            handler (request, reply) {
+            handler (request, h) {
                 const {req, res} = request.raw
-                //
-                // // Inject Hapi standard request and reply
-                req.request = request
-                res.reply = reply
-                //
-                // // Render using nuxt.render
+                
+                nuxt.render(req, res)
 
-                return new Promise((resolve, reject) => {
-                    nuxt.render(req, res, promise => {
-                        promise.then(resolve).catch(reject);
-                    })
-                })
-
+                // https://hapijs.com/api#h.abandon
+                return h.abandon
             }
         })
 
         // Dev
         if (nuxt.options.dev && nuxt.options.startOnly !== false) {
             // Build nuxt
-            (async () =>{
-                const builder = new Builder(nuxt);
-                server.expose('builder', builder);
-                await  builder.build();
-            })()
+            console.log('Building nuxt ...')
+            const builder = new Builder(nuxt);
+            server.expose('builder', builder);
+            await builder.build()
         }
     }
 }
 
-module.exports = NuxtPlugin;
+module.exports = NuxtPlugin
