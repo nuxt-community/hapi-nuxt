@@ -11,6 +11,8 @@ async function start () {
     await server.route(Routes)
 
     await server.start()
+
+    console.log(`Hapi server listening on http://localhost:3000`)
 }
 
 start().catch(console.error)
