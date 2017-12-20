@@ -1,6 +1,6 @@
 {
   "name": "hapi-nuxt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nuxt plugin for Hapi.js",
   "repository": "https://github.com/nuxt-community/hapi-nuxt",
   "main": "src/index.js",
