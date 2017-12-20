@@ -52,7 +52,7 @@ const NuxtPlugin = {
             console.log('Building nuxt ...')
             const builder = new Builder(nuxt);
             server.expose('builder', builder);
-            await builder.build()
+            builder.build().catch(console.error)
         }
     }
 }
