@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "dev": "nodemon server.js",
+        "dev": "nodemon -w api server.js",
         "start": "NODE_ENV=production node server.js",
         "build": "nuxt build"
     }
