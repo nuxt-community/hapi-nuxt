@@ -16,9 +16,11 @@
   "contributors": [
     "Pooya Parsa <pooya@pi0.ir>"
   ],
+  "peerDependencies": {
+    "nuxt": "*"
+  },
   "dependencies": {
-    "hapi": "^17.1.1",
-    "nuxt": "^1.0.0-rc11"
+    "hapi": "^17.1.1"
   },
   "devDependencies": {
     "axios": "^0.16.2",
