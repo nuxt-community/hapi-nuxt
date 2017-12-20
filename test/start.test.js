@@ -29,7 +29,6 @@ describe('start', () => {
         process.env.NODE_ENV = 'production'
         await new Builder(new Nuxt(options)).build()
         process.env.NODE_ENV = NODE_ENV
-        console.log('Built!')
 
         // Register plugin
         await server.register({
