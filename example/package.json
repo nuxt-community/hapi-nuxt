@@ -1,0 +1,10 @@
+{
+    "name": "hapi-nuxt-example",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "nodemon",
+        "start": "node ./server",
+        "build": "npm run nuxt build"
+    }
+}
