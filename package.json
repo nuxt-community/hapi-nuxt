@@ -20,11 +20,12 @@
     "nuxt": "*"
   },
   "dependencies": {
-    "hapi": "^17.1.1"
+    "hapi": "^17.2.0"
   },
   "devDependencies": {
-    "axios": "^0.16.2",
-    "codecov": "^2.3.0",
-    "jest": "^21.0.0"
+    "axios": "^0.17.1",
+    "codecov": "^3.0.0",
+    "jest": "^22.0.3",
+    "nuxt": "next"
   }
 }
