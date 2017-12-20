@@ -4,17 +4,17 @@ const hapiNuxt = require('..')
 
 describe('options', () => {
 
-    test('nuxt.config.js', () => {
-        server = new Server({ port: 1234 })
+    const port = 5060
 
-        server.register({
-            register: hapiNuxt,
+    test('nuxt.config.js', async () => {
+        server = new Server({ port })
+
+        await server.register({
+            plugin: hapiNuxt,
             options: __dirname + '/fixture/nuxt.config.js'
-        }, (err) => {
-            if (err) throw err
-
-            expect(server.plugins.nuxt.nuxt.options.test).toBe(123)
         })
+
+        expect(server.plugins.nuxt.nuxt.options.test).toBe(123)
     })
 
 })
