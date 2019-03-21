@@ -26,7 +26,7 @@ const NuxtPlugin = {
 
         // Create nuxt instance using options
         const nuxt = new Nuxt(config)
-        await nuxt.ready();
+        await nuxt.ready()
 
         server.expose('nuxt', nuxt)
 
@@ -40,7 +40,6 @@ const NuxtPlugin = {
             },
             handler (request, h) {
                 const {req, res} = request.raw
-
                 nuxt.render(req, res)
 
                 // https://hapijs.com/api#h.abandon
