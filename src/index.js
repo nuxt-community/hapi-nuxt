@@ -7,7 +7,7 @@ const NuxtPlugin = {
 
     pkg: require('../package.json'),
 
-    async register (server, config) {
+    async register (server, config, baseUrl) {
 
         // If config is not provided try nuxt.config.js
         if (!config || Object.keys(config).length === 0) {
@@ -33,7 +33,7 @@ const NuxtPlugin = {
         // Nuxt handler
         server.route({
             method: 'GET',
-            path: '/{path*}',
+            path: baseUrl ? `/${baseUrl}/{path*}` : '/{path*}',
             config: {
                 id: 'NuxtController.render',
                 auth: false,
