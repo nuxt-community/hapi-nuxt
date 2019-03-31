@@ -6,7 +6,10 @@
   "contributors": [
     "Pooya Parsa <pooya@pi0.ir>"
   ],
-  "main": "src/index.js",
+  "main": "lib/plugin.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "coverage": "codecov",
     "test": "jest"
