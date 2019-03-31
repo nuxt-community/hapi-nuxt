@@ -1,32 +1,31 @@
 {
   "name": "hapi-nuxt",
   "version": "1.0.1",
-  "description": "Nuxt plugin for Hapi.js",
-  "repository": "https://github.com/nuxt-community/hapi-nuxt",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "jest",
-    "coverage": "codecov"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
-  },
+  "description": "Nuxt.js plugin for Hapi.js",
+  "repository": "nuxt-community/hapi-nuxt",
   "contributors": [
     "Pooya Parsa <pooya@pi0.ir>"
   ],
-  "peerDependencies": {
-    "nuxt": "*"
+  "main": "src/index.js",
+  "scripts": {
+    "coverage": "codecov",
+    "test": "jest"
   },
-  "dependencies": {
-    "hapi": "^18.1.0"
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage/",
+    "testEnvironment": "node"
   },
   "devDependencies": {
     "axios": "^0.18.0",
     "codecov": "^3.2.0",
-    "jest": "^22.4.4",
+    "hapi": "^18.1.0",
+    "jest": "^24.5.0",
     "nodemon": "^1.18.10",
-    "nuxt": "next"
+    "nuxt-edge": "^2.6.0-25899847.159123fe"
+  },
+  "peerDependencies": {
+    "hapi": ">=17",
+    "nuxt": "2.x"
   }
 }
