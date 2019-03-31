@@ -38,7 +38,7 @@
     "nuxt-edge": "^2.6.0-25899847.159123fe"
   },
   "peerDependencies": {
-    "hapi": ">=17",
+    "hapi": ">=18.1.0",
     "nuxt": "2.x"
   },
   "dependencies": {
