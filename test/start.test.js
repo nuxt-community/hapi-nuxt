@@ -1,17 +1,29 @@
 const path = require('path')
 const { Server } = require('hapi')
 const axios = require('axios')
+const { Builder, Nuxt } = require('nuxt-edge')
 const hapiNuxt = require('..')
 
-describe('dev', () => {
+describe('start', () => {
   let server
   const port = 5060
   const get = uri => axios.get(`http://localhost:${port}${uri}`).then(res => res.data)
-  const options = { srcDir: path.join(__dirname, 'fixture') }
 
-  beforeAll(async () => {
+  const options = {
+    rootDir: path.join(__dirname, 'fixture'),
+    dev: false,
+    edge: true
+  }
+
+  it('build', async () => {
+    const nuxt = new Nuxt(options)
+    await new Builder(nuxt).build()
+  }, 60000)
+
+  it('setup server', async () => {
     server = new Server({ port })
 
+    // Add test API route
     server.route({
       path: '/api',
       method: 'GET',

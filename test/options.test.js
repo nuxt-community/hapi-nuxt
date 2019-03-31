@@ -11,7 +11,11 @@ describe('options', () => {
 
     await server.register({
       plugin: hapiNuxt,
-      options: path.join(__dirname, 'fixture/nuxt.config.js')
+      options: {
+        rootDir: path.join(__dirname, 'fixture'),
+        edge: true,
+        dev: false
+      }
     })
 
     expect(server.plugins.nuxt.nuxt.options.test).toBe(123)
