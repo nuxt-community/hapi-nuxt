@@ -67,11 +67,11 @@ Will be resolved relative to `rootDir`
 
 Use `nuxt-edge`
 
-### `baseUrl`
+### `baseURL`
 
 - Default: `/`
 
-BaseUrl for SSR route handler
+baseURL for SSR route handler
 
 ### `route`
 
