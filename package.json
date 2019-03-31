@@ -40,5 +40,8 @@
   "peerDependencies": {
     "hapi": ">=17",
     "nuxt": "2.x"
+  },
+  "dependencies": {
+    "esm": "^3.2.22"
   }
 }
