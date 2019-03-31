@@ -20,7 +20,7 @@
     "nuxt": "*"
   },
   "dependencies": {
-    "hapi": "^17.2.0"
+    "hapi": "^18.1.0"
   },
   "devDependencies": {
     "axios": "^0.17.1",
