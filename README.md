@@ -31,14 +31,14 @@ await server.register(HapiNuxt)
 
 ```
 
-By default this plugin tries to read `nuxt.config.js` from current directory and pass it as options. 
+By default this plugin tries to read `nuxt.config.js` from current directory and pass it as options.
 You can either provide a new path by setting options to an string value or directly passing options
 
 ```js
 await server.register({
     plugin: HapiNuxt
     options: {
-        // Nuxt options       
+        // Nuxt options
     }
 }
 ```
@@ -47,7 +47,7 @@ If `nuxt.options.dev` (Automatically set by nuxt if not provided in options) is 
 
 ## Access `nuxt` and `builder` instances
 
-Plugin exposes nuxt and builder (for dev only) instances to hapi. 
+Plugin exposes nuxt and builder (for dev only) instances to hapi.
 
 ```js
 server = new Hapi.Server()
@@ -60,4 +60,4 @@ const { nuxt, builder } = server.plugins.nuxt
 
 # License
 
-MIT - Fandogh & Nuxt.js
+MIT
