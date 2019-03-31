@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "coverage": "codecov",
+    "lint": "eslint lib test example",
     "test": "jest"
   },
   "jest": {

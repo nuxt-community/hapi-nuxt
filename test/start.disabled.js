@@ -1,57 +1,56 @@
+const path = require('path')
+
 const { Server } = require('hapi')
 const axios = require('axios')
 const hapiNuxt = require('..')
 const { Builder, Nuxt } = require('nuxt')
 
-
 describe('start', () => {
+  let server
+  const port = 5060
+  const get = uri => axios.get(`http://localhost:${port}${uri}`).then(res => res.data)
+  const options = { srcDir: path.join(__dirname, 'fixture'), dev: false }
 
-    let server
-    const port = 5060
-    const get = uri => axios.get(`http://localhost:${port}${uri}`).then(res => res.data)
-    const options = { srcDir: __dirname + '/fixture', dev: false }
+  beforeAll(async () => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
 
-    beforeAll(async () => {
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
+    server = new Server({ port })
 
-        server = new Server({ port })
-
-        server.route({
-            path: '/api',
-            method: 'GET',
-            handler(request, h) {
-                return { api: 'works!' }
-            }
-        })
-
-        // Build before start
-        let NODE_ENV = process.env.NODE_ENV
-        process.env.NODE_ENV = 'production'
-        await new Builder(new Nuxt(options)).build()
-        process.env.NODE_ENV = NODE_ENV
-
-        // Register plugin
-        await server.register({
-          plugin: hapiNuxt,
-          options
-        })
-
-        // Start server
-        await server.start()
+    server.route({
+      path: '/api',
+      method: 'GET',
+      handler(request, h) {
+        return { api: 'works!' }
+      }
     })
 
-    afterAll(async () => {
-        await server.stop()
+    // Build before start
+    const NODE_ENV = process.env.NODE_ENV
+    process.env.NODE_ENV = 'production'
+    await new Builder(new Nuxt(options)).build()
+    process.env.NODE_ENV = NODE_ENV
+
+    // Register plugin
+    await server.register({
+      plugin: hapiNuxt,
+      options
     })
 
-    test('api', async () => {
-        let r = await get('/api')
-        expect(r.api).toBe('works!')
-    })
+    // Start server
+    await server.start()
+  })
 
-    test('/', async () => {
-        let r = await get('/')
-        expect(r).toContain('Hello Nuxt!')
-    })
+  afterAll(async () => {
+    await server.stop()
+  })
 
+  test('api', async () => {
+    const r = await get('/api')
+    expect(r.api).toBe('works!')
+  })
+
+  test('/', async () => {
+    const r = await get('/')
+    expect(r).toContain('Hello Nuxt!')
+  })
 })

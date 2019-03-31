@@ -1,5 +1,5 @@
 module.exports = {
-    srcDir: __dirname,
-    dev: false,
-    test: 123
+  srcDir: __dirname,
+  dev: false,
+  test: 123
 }
