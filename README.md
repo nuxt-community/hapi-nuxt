@@ -69,6 +69,12 @@ baseURL for SSR route handler
 
 Hapi route options for SSR handler
 
+### `routeMethod`
+
+- Default: `*`
+
+Hapi route method. (Can be set to `GET` for more strict handling)
+
 ## Access `nuxt` and `builder` instances
 
 This plugin exposes nuxt and builder (for dev only) instances to hapi.
