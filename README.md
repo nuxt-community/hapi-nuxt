@@ -23,11 +23,11 @@ Register it on your server:
 
 ```js
 const Hapi = require('hapi')
-const HapiNuxt = require('hapi-nuxt')
+const nuxtPlugin = require('hapi-nuxt')
 
 // ...
 server = new Hapi.Server()
-await server.register(HapiNuxt)
+await server.register(nuxtPlugin)
 
 ```
 
@@ -36,14 +36,48 @@ You can either provide a new path by setting options to an string value or direc
 
 ```js
 await server.register({
-    plugin: HapiNuxt
+    plugin: nuxtPlugin
     options: {
         // Nuxt options
     }
 }
 ```
 
-If `nuxt.options.dev` (Automatically set by nuxt if not provided in options) is `true` plugin automatically starts a `Builder` allow to hot reload on dev. You can manually disable this behavior by using `options.startOnly` to `true`.
+## Options
+
+### `dev`
+
+- Default: `true` (`false` when environment variable `NODE_ENV` is `production`)
+
+Automatically starts a `Builder` allow to hot reload on dev. Should be disabled for production.
+
+### `rootDir`
+
+- Default: current working directory
+
+### `nuxtConfig`
+
+- Default: `nuxt.config.js`
+
+Will be resolved relative to `rootDir`
+
+### `edge`
+
+- Default: `false`
+
+Use `nuxt-edge`
+
+### `baseUrl`
+
+- Default: `/`
+
+BaseUrl for SSR route handler
+
+### `route`
+
+- Default: `{ id: 'nuxt.render', auth: false }`
+
+Hapi route options for SSR handler
 
 ## Access `nuxt` and `builder` instances
 
