@@ -1,12 +1,17 @@
 const { Server } = require('hapi')
-
 const Routes = require('./api')
-const hapiNuxt = require('..') // 'hapi-nuxt'
+const nuxtPlugin = require('..')
 
 async function start() {
   const server = new Server({ port: 3000 })
 
-  await server.register(hapiNuxt)
+  await server.register({
+    plugin: nuxtPlugin,
+    options: {
+      edge: true,
+      rootDir: __dirname
+    }
+  })
 
   await server.route(Routes)
 
