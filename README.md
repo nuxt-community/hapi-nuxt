@@ -9,7 +9,7 @@
 
 > [Nuxt.js](https://nuxtjs.org) plugin for [Hapi.js](https://hapijs.com/)
 
-**IMPORTANT:** Starting from 1.x versions, this plugin is only compatible with Hapi >= 17
+**IMPORTANT:** This plugin is only compatible with Hapi >= 17
 
 ## Quick start
 
@@ -25,20 +25,10 @@ Register it on your server:
 const Hapi = require('hapi')
 const nuxtPlugin = require('hapi-nuxt')
 
-// ...
-server = new Hapi.Server()
-await server.register(nuxtPlugin)
-
-```
-
-By default this plugin tries to read `nuxt.config.js` from current directory and pass it as options.
-You can either provide a new path by setting options to an string value or directly passing options
-
-```js
 await server.register({
     plugin: nuxtPlugin
     options: {
-        // Nuxt options
+        // plugin options
     }
 }
 ```
@@ -59,13 +49,13 @@ Automatically starts a `Builder` allow to hot reload on dev. Should be disabled 
 
 - Default: `nuxt.config.js`
 
-Will be resolved relative to `rootDir`
+Resolved relative to `rootDir`
 
 ### `edge`
 
 - Default: `false`
 
-Use `nuxt-edge`
+Use `nuxt-edge` instead of `nuxt` package if set to `true`
 
 ### `baseURL`
 
@@ -81,7 +71,7 @@ Hapi route options for SSR handler
 
 ## Access `nuxt` and `builder` instances
 
-Plugin exposes nuxt and builder (for dev only) instances to hapi.
+This plugin exposes nuxt and builder (for dev only) instances to hapi.
 
 ```js
 server = new Hapi.Server()
