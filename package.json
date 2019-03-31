@@ -13,7 +13,8 @@
   "scripts": {
     "coverage": "codecov",
     "lint": "eslint lib test example",
-    "test": "jest"
+    "test": "yarn lint && jest",
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "jest": {
     "collectCoverage": true,
@@ -35,7 +36,8 @@
     "hapi": "^18.1.0",
     "jest": "^24.5.0",
     "nodemon": "^1.18.10",
-    "nuxt-edge": "^2.6.0-25899847.159123fe"
+    "nuxt-edge": "^2.6.0-25899847.159123fe",
+    "standard-version": "^5.0.2"
   },
   "peerDependencies": {
     "hapi": ">=17"
