@@ -1,4 +1,4 @@
-# hapi-nuxt
+# Hapi Plugin for Nuxt.js
 
 [![npm](https://img.shields.io/npm/dt/hapi-nuxt.svg?style=flat-square)](https://npmjs.com/package/hapi-nuxt)
 [![npm release](https://img.shields.io/npm/v/hapi-nuxt/latest.svg?style=flat-square)](https://npmjs.com/package/hapi-nuxt)
@@ -16,14 +16,14 @@
 Install plugin:
 
 ```bash
-yarn add hapi-nuxt # or npm install hapi-nuxt
+yarn add @nuxtjs/hapi # or npm install @nuxtjs/hapi
 ```
 
 Register it on your server:
 
 ```js
 const Hapi = require('@hapi/hapi')
-const nuxtPlugin = require('hapi-nuxt')
+const nuxtPlugin = require('@nuxtjs/hapi')
 
 await server.register({
     plugin: nuxtPlugin

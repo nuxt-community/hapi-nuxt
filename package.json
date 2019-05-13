@@ -1,5 +1,5 @@
 {
-  "name": "hapi-nuxt",
+  "name": "@nuxtjs/hapi",
   "version": "2.2.0",
   "description": "Nuxt.js plugin for Hapi.js",
   "repository": "nuxt-community/hapi-nuxt",
