@@ -9,7 +9,7 @@
 
 > [Nuxt.js](https://nuxtjs.org) plugin for [Hapi.js](https://hapijs.com/)
 
-**IMPORTANT:** This plugin is only compatible with Hapi >= 17
+**IMPORTANT:** This plugin is compatible with Hapi >= 17
 
 ## Quick start
 
@@ -22,7 +22,7 @@ yarn add hapi-nuxt # or npm install hapi-nuxt
 Register it on your server:
 
 ```js
-const Hapi = require('hapi')
+const Hapi = require('@hapi/hapi')
 const nuxtPlugin = require('hapi-nuxt')
 
 await server.register({

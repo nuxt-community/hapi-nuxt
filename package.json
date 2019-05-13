@@ -21,7 +21,11 @@
     "coverageDirectory": "./coverage/",
     "testEnvironment": "node"
   },
+  "dependencies": {
+    "esm": "^3.2.20"
+  },
   "devDependencies": {
+    "@hapi/hapi": "^18.3.1",
     "@nuxtjs/eslint-config": "^0.0.1",
     "axios": "^0.18.0",
     "codecov": "^3.2.0",
@@ -33,16 +37,9 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.2",
-    "hapi": "^18.1.0",
     "jest": "^24.5.0",
     "nodemon": "^1.18.10",
-    "nuxt-edge": "^2.6.0-25899847.159123fe",
+    "nuxt-edge": "^2.7.0-25961769.126c8c14",
     "standard-version": "^5.0.2"
-  },
-  "peerDependencies": {
-    "hapi": ">=17"
-  },
-  "dependencies": {
-    "esm": "^3.2.22"
   }
 }

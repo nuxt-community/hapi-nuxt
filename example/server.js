@@ -1,4 +1,4 @@
-const { Server } = require('hapi')
+const { Server } = require('@hapi/hapi')
 const Routes = require('./api')
 const nuxtPlugin = require('..')
 

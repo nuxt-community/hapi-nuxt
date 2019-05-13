@@ -1,5 +1,5 @@
 const path = require('path')
-const { Server } = require('hapi')
+const { Server } = require('@hapi/hapi')
 const { Builder } = require('nuxt-edge')
 const hapiNuxt = require('..')
 
