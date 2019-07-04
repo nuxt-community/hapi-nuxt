@@ -22,24 +22,24 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "esm": "^3.2.22"
+    "esm": "^3.2.25"
   },
   "devDependencies": {
     "@hapi/hapi": "^18.3.1",
     "@nuxtjs/eslint-config": "^0.0.1",
     "axios": "^0.18.0",
-    "codecov": "^3.4.0",
+    "codecov": "^3.5.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jest": "^22.5.1",
-    "eslint-plugin-node": "^9.0.1",
-    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
+    "eslint-plugin-vue": "^5.2.3",
     "jest": "^24.8.0",
-    "nodemon": "^1.19.0",
-    "nuxt-edge": "^2.7.0-25961769.126c8c14",
+    "nodemon": "^1.19.1",
+    "nuxt-edge": "^2.7.0-25963209.b8a7fb75",
     "standard-version": "^6.0.1"
   }
 }
