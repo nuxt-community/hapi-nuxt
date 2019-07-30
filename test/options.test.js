@@ -1,23 +1,34 @@
-const path = require('path')
+const { join } = require('path')
 const { Server } = require('@hapi/hapi')
+const getPort = require('get-port')
 const hapiNuxt = require('..')
 
-describe('options', () => {
-  const port = 5060
-  let server
+let server, port
 
-  test('nuxt.config.js', async () => {
+const options = {
+  rootDir: join(__dirname, 'fixture'),
+  baseURL: 'api',
+  dev: false,
+  edge: false
+}
+
+describe('options', () => {
+  beforeAll(async () => {
+    port = await getPort()
     server = new Server({ port })
 
+    // Register plugin
     await server.register({
       plugin: hapiNuxt,
-      options: {
-        rootDir: path.join(__dirname, 'fixture'),
-        edge: true,
-        dev: false
-      }
+      options
     })
+  })
 
+  afterAll(async () => {
+    await server.stop()
+  })
+
+  test('nuxt.config.js', () => {
     expect(server.plugins.nuxt.nuxt.options.test).toBe(123)
   })
 })

@@ -2,7 +2,7 @@ const { Server } = require('@hapi/hapi')
 const Routes = require('./api')
 const nuxtPlugin = require('..')
 
-async function start() {
+async function start () {
   const server = new Server({ port: 3000 })
 
   await server.register({
