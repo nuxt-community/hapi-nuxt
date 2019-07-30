@@ -1,7 +1,9 @@
-.idea
-*.iml
 node_modules
+*.iml
+.idea
 *.log*
 .nuxt
+.vscode
+.DS_Store
 coverage
-!example/node_modules
+dist

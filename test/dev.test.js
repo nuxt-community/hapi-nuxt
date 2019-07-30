@@ -1,32 +1,36 @@
-const path = require('path')
+const { join } = require('path')
 const { Server } = require('@hapi/hapi')
 const { Builder } = require('nuxt-edge')
+const getPort = require('get-port')
 const hapiNuxt = require('..')
 
 Builder.prototype.build = jest.fn(() => Promise.resolve())
 
-describe('dev', () => {
-  let server
-  const options = {
-    srcDir: path.join(__dirname, 'fixture'),
-    edge: true,
-    dev: true
-  }
+let server, port
 
-  it('setup dev server', async () => {
-    server = new Server()
+const options = {
+  srcDir: join(__dirname, 'fixture'),
+  edge: true,
+  dev: true
+}
+
+describe('dev', () => {
+  beforeAll(async () => {
+    port = await getPort()
+    server = new Server({ port })
 
     // Register plugin
     await server.register({
       plugin: hapiNuxt,
       options
     })
-
-    // Expect builder.build to be called
-    expect(Builder.prototype.build).toBeCalled()
   })
 
   afterAll(async () => {
     await server.stop()
+  })
+
+  test('setup dev server', () => {
+    expect(Builder.prototype.build).toBeCalled()
   })
 })

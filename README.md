@@ -1,35 +1,34 @@
 # Hapi Plugin for Nuxt.js
 
-[![npm](https://img.shields.io/npm/dt/hapi-nuxt.svg?style=flat-square)](https://npmjs.com/package/hapi-nuxt)
-[![npm release](https://img.shields.io/npm/v/hapi-nuxt/latest.svg?style=flat-square)](https://npmjs.com/package/hapi-nuxt)
-[![CircleCI](https://img.shields.io/circleci/project/github/nuxt-community/hapi-nuxt.svg?style=flat-square)](https://circleci.com/gh/nuxt-community/hapi-nuxt)
-[![Codecov](https://img.shields.io/codecov/c/github/nuxt-community/hapi-nuxt.svg?style=flat-square)](https://codecov.io/gh/nuxt-community/hapi-nuxt)
-[![Greenkeeper badge](https://img.shields.io/badge/greenkeepr-enabled-green.svg?style=flat-square)](https://greenkeeper.io/)
-[![dependencies Status](https://david-dm.org/expressjs/express/status.svg?style=flat-square)](https://david-dm.org/expressjs/express)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Circle CI][circle-ci-src]][circle-ci-href]
+[![Codecov][codecov-src]][codecov-href]
+[![License][license-src]][license-href]
 
 > [Nuxt.js](https://nuxtjs.org) plugin for [Hapi.js](https://hapijs.com/)
 
 **IMPORTANT:** This plugin is compatible with Hapi >= 17
 
-## Quick start
+## Setup
 
-Install plugin:
+1. Add `@nuxtjs/hapi` dependency to your project
 
 ```bash
 yarn add @nuxtjs/hapi # or npm install @nuxtjs/hapi
 ```
 
-Register it on your server:
+2. Register it on your server:
 
 ```js
 const Hapi = require('@hapi/hapi')
 const nuxtPlugin = require('@nuxtjs/hapi')
 
 await server.register({
-    plugin: nuxtPlugin
-    options: {
-        // plugin options
-    }
+  plugin: nuxtPlugin
+  options: {
+    // plugin options
+  }
 }
 ```
 
@@ -80,7 +79,7 @@ Hapi route method. (Can be set to `GET` for more strict handling)
 This plugin exposes nuxt and builder (for dev only) instances to hapi.
 
 ```js
-server = new Hapi.Server()
+const server = new Hapi.Server()
 
 await server.register(HapiNuxt)
 
@@ -88,6 +87,30 @@ await server.register(HapiNuxt)
 const { nuxt, builder } = server.plugins.nuxt
 ```
 
-# License
+## Development
 
-MIT
+1. Clone this repository
+2. Install dependencies using `yarn install` or `npm install`
+3. Start development server using `npm run dev`
+
+## License
+
+[MIT License](./LICENSE)
+
+Copyright (c) Nuxt Community
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/hapi/latest.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/hapi
+
+[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/hapi.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/hapi
+
+[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/hapi-nuxt.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/nuxt-community/hapi-nuxt
+
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/hapi-nuxt.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-community/hapi-nuxt
+
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/hapi.svg?style=flat-square
+[license-href]: https://npmjs.com/package/@nuxtjs/hapi
