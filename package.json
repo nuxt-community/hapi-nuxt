@@ -35,7 +35,6 @@
     "husky": "latest",
     "jest": "latest",
     "nodemon": "latest",
-    "nuxt": "^2.8.1",
     "nuxt-edge": "latest",
     "standard-version": "latest"
   }

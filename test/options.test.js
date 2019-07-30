@@ -9,7 +9,7 @@ const options = {
   rootDir: join(__dirname, 'fixture'),
   baseURL: 'api',
   dev: false,
-  edge: false
+  edge: true
 }
 
 describe('options', () => {
