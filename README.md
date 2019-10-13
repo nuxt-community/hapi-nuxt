@@ -87,6 +87,10 @@ await server.register(HapiNuxt)
 const { nuxt, builder } = server.plugins.nuxt
 ```
 
+## Access Hapi's internals.
+
+The hapi request object is available from `nuxtServerInit` and the `context` under `res.hapi`. Likewise, the hapi response toolkit will be available in `res.hapi`.
+
 ## Development
 
 1. Clone this repository
