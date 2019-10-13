@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/hapi",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Nuxt.js plugin for Hapi.js",
   "license": "MIT",
   "contributors": [
