@@ -2,40 +2,34 @@
   "name": "@nuxtjs/hapi",
   "version": "2.3.0",
   "description": "Nuxt.js plugin for Hapi.js",
+  "repository": "nuxt-community/hapi-nuxt",
   "license": "MIT",
   "contributors": [
     "Pooya Parsa <pooya@pi0.ir>"
   ],
   "main": "lib/plugin.js",
-  "repository": "nuxt-community/hapi-nuxt",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "dev": "cd example && yarn dev",
-    "lint": "eslint --ext .js,.vue example lib test",
-    "test": "yarn lint && jest",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish"
-  },
   "files": [
     "lib"
   ],
-  "dependencies": {
-    "esm": "^3.2.25"
+  "scripts": {
+    "dev": "cd example && yarn dev",
+    "lint": "eslint --ext .js,.vue example lib test",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
   },
   "devDependencies": {
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
     "@hapi/hapi": "latest",
     "@nuxtjs/eslint-config": "latest",
     "axios": "latest",
     "codecov": "latest",
     "eslint": "latest",
     "get-port": "latest",
-    "husky": "latest",
     "jest": "latest",
     "nodemon": "latest",
     "nuxt-edge": "latest",
     "standard-version": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

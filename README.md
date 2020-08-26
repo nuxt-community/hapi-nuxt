@@ -40,15 +40,15 @@ await server.register({
 
 Automatically starts a `Builder` allow to hot reload on dev. Should be disabled for production.
 
+### `overrides`
+
+Override nuxt.config
+
 ### `rootDir`
 
 - Default: current working directory
 
-### `nuxtConfig`
-
-- Default: `nuxt.config.js`
-
-Resolved relative to `rootDir`
+Nuxt app rootDir
 
 ### `edge`
 

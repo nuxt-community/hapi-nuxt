@@ -29,6 +29,7 @@ describe('options', () => {
   })
 
   test('nuxt.config.js', () => {
-    expect(server.plugins.nuxt.nuxt.options.test).toBe(123)
+    const { nuxt } = server.plugins.nuxt
+    expect(nuxt.options.foo).toBe(123)
   })
 })
