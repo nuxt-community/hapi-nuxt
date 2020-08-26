@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/nuxt-community/hapi-nuxt/compare/v2.3.0...v3.0.0) (2020-08-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* requires nuxt > 2.12
+
+### Features
+
+* use `loadNuxt` (resolves [#57](https://github.com/nuxt-community/hapi-nuxt/issues/57)) ([105b153](https://github.com/nuxt-community/hapi-nuxt/commit/105b153a87f5cb7da185a7d53d8b6d4964a0e449))
+
 ## [2.3.0](https://github.com/nuxt-community/hapi-nuxt/compare/v2.2.1...v2.3.0) (2019-10-13)
 
 
